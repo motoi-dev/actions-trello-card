@@ -1,0 +1,9 @@
+name: 'Create Trello card by GitHub Actions'
+
+inputs:
+  action-on-trello:
+    required: true
+    
+runs:
+  using: 'node12'
+  main: 'index.js'
