@@ -323,7 +323,7 @@ async function updateACheckitemOnACard(apiKey, apiToken, targetCardId, checklist
   }
   const query = new URLSearchParams(obj)
   await fetch(
-    `https://api.trello.com/1/checklists/${checklistId}/?${query}`,
+    `https://api.trello.com/1/checklists/${checklistId}?${query}`,
     {
       method: 'GET'
     }
@@ -331,6 +331,7 @@ async function updateACheckitemOnACard(apiKey, apiToken, targetCardId, checklist
   .then(async (response) => {
     result = await response.json()
     let targetCheckItemId
+    cosole.log(result)
     for (let checkItem of response.checkItems) {
       if (checkItem.name === paraObj.title) {
         targetCheckItemId = checkItem.id
