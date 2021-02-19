@@ -349,6 +349,7 @@ async function updateACheckitemOnACard(apiKey, apiToken, targetCardId, checklist
       token: apiToken,
       state: state
     }
+    console.log(obj)
     const query = new URLSearchParams(obj)
     await fetch(
       `https://api.trello.com/1/cards/${targetCardId}/checkItem/${targetCheckItemId}?${query}`,
