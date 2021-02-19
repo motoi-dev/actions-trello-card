@@ -144,6 +144,8 @@ function updateCardWhenIssueClosedOrReopened(apiKey, apiToken) {
   const assignees = issue.assignees
   const milestone = issue.milestone
 
+  console.log(github.context.payload)
+
   const paraObj = {
     html_url: htmlUrl,
     id: id,
