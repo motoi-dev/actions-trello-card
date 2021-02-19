@@ -144,8 +144,6 @@ function updateCardWhenIssueClosedOrReopened(apiKey, apiToken) {
   const assignees = issue.assignees
   const milestone = issue.milestone
 
-  console.log(github.context.payload)
-
   const paraObj = {
     html_url: htmlUrl,
     id: id,
@@ -339,6 +337,7 @@ async function updateACheckitemOnACard(apiKey, apiToken, targetCardId, checklist
         break
       }
     }
+    console.log(paraObj)
     let state
     switch(paraObj.action) {
       case 'closed':
