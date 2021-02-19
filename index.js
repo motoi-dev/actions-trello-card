@@ -331,7 +331,7 @@ async function updateACheckitemOnACard(apiKey, apiToken, targetCardId, checklist
   .then(async (response) => {
     result = await response.json()
     let targetCheckItemId
-    cosole.log(result)
+    console.log(result)
     for (let checkItem of response.checkItems) {
       if (checkItem.name === paraObj.title) {
         targetCheckItemId = checkItem.id
