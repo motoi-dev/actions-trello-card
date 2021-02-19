@@ -337,20 +337,20 @@ async function updateACheckitemOnACard(apiKey, apiToken, targetCardId, checklist
         break
       }
     }
-    console.log(paraObj)
     let state
     switch(paraObj.action) {
       case 'closed':
         state = 'complete'
+        break
       case 'reopened':
         state = 'incomplete'
+        break
     }
     const obj = {
       key: apiKey,
       token: apiToken,
       state: state
     }
-    console.log(obj)
     const query = new URLSearchParams(obj)
     await fetch(
       `https://api.trello.com/1/cards/${targetCardId}/checkItem/${targetCheckItemId}?${query}`,
